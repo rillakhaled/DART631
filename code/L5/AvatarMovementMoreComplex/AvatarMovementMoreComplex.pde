@@ -15,6 +15,25 @@ void draw()
   background(255); // Fill the background to create animation
   avatarX += avatarVelocityX; // Add the X velocity to the avatar's X location so it moves
   avatarY += avatarVelocityY; // Add the Y velocity to the avatar's Y location so it moves
+
+
+  // constrain my avatarX and avatarY to fall within visible screen
+
+  if (avatarX < 0) {
+    avatarX = 0;
+  }
+  if (avatarX >= width-avatarSize) {
+    // make the side of my avatar lean against the “width” boundary
+    avatarX = width-avatarSize;
+  }
+  if (avatarY < 0) {
+    avatarY = 0;
+  }
+  if (avatarY >= height-avatarSize) {
+    // make the top of my avatar sit on the “height” boundary
+    avatarY = height-avatarSize;
+  }
+
   rect(avatarX, avatarY, avatarSize, avatarSize); // Draw the avatar in its new location
 }
 
