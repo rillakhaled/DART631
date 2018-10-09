@@ -1,18 +1,16 @@
-PImage cat;
+PImage cat; // PImage will hold our image
 
 void setup()
 {
   size(800, 600);
+  // load in our image file: Processing will
+  // look for this in the data folder
   cat = loadImage("kasper.jpg");
 }
 
 void draw()
 {
-  int currentLocation = 0;
-
-  while ( currentLocation < mouseX ) {
-    image(cat, currentLocation, mouseY);
-    //rect(currentLocation,mouseY,10,10);
-    currentLocation += 200;
-  }
+  background(255);
+  // draw the image at current mouseX, mouseY
+  image(cat, mouseX, mouseY);
 }
