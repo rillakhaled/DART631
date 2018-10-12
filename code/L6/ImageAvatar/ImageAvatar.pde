@@ -26,11 +26,11 @@ void draw()
 
   // map a value for R based on avatarX value, i.e. where egg X is on screen
   // determines where it falls between 180-255
-  int rVal = int(map(avatarX, 0, 800, 180, 255));
+  int rVal = int(map(avatarX, 0, 800, 0, 255));
 
   // map a value for G based on avatarY value, i.e. where egg Y is on screen
   // determines where it falls between 180-255
-  int gVal = int(map(avatarY, 0, 600, 180, 255));
+  int gVal = int(map(avatarY, 0, 600, 0, 255));
   
   // establish a value for B, let's just set it to 200, always
   int bVal = 200;
@@ -55,7 +55,7 @@ void draw()
     // work this out based on egg.height
     avatarY = height-egg.height;
   }
-  // rect(avatarX, avatarY, avatarSize, avatarSize); // Draw the avatar in its new location
+  // Draw the avatar in its new location
   image(egg, avatarX, avatarY);
 }
 
