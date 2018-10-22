@@ -11,8 +11,11 @@ void draw()
   fill(255, 5);
   rect(0, 0, width, height);
   
+  // declare a variable called currentLocation corresponding to
+  // the X loc of a rect
   int currentLocation = 0;
   
+  // while we have not hit mouseX
   while(currentLocation < mouseX) {
     
     // establish a mapped color
@@ -31,6 +34,7 @@ void draw()
     // draw a rectangle at currentLocation, mouseY that is 10x10
     rect(currentLocation, mouseY, 10, 10);
     
+    // update currentLocation - our next rect drawing X loc - by 20
     currentLocation += 20;
   }
 }
